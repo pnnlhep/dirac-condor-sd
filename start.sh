@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # Setup DIRAC SiteDirector for condor
-ptables -I INPUT -p tcp --dport 9130:9200 -j ACCEPT
+iptables -I INPUT -p tcp --dport 9130:9200 -j ACCEPT
 service iptables save
 mkdir -p /opt/dirac/etc/grid-security/
 ln -s /etc/grid-security/certificates  /opt/dirac/etc/grid-security/certificates
